@@ -3,6 +3,10 @@ const fetch = require('node-fetch')
 require('dotenv').config()
 const app = express()
 
+app.get('/', (req, res) => {
+   res.json('Server up and running')
+})
+
 app.get('/getnoun', (req, res) => {
    //build api URL with user zip
    const baseUrl = 'http://api.wordnik.com/v4/words.json/randomWord?hasDictionaryDef=true&includePartOfSpeech=noun&minCorpusCount=1000&maxCorpusCount=10000&minDictionaryCount=1&maxDictionaryCount=-1&minLength=5&maxLength=-1'
